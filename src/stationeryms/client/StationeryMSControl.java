@@ -1,35 +1,44 @@
 package stationeryms.client;
 
 import stationeryms.common.CommandRead;
+import stationeryms.common.CommonException;
+import stationeryms.common.MsgProperties;
 
 public class StationeryMSControl {
-  private CommandRead commandRead; // コマンドラインで入力した情報を管理
+  private CommandRead commandRead; // コマンドライン入力値を管理
+  private MsgProperties msgProperties; // メッセージプロパティ値を格納
 
   /*
    * コンストラクタ
    */
-  public StationeryMSControl() {
+  public StationeryMSControl() throws CommonException {
     this.commandRead = new CommandRead();
+    this.msgProperties = new MsgProperties();
   }
 
   /*
    * ユーザが入力した番号のメニューを実行するメソッド
    */
   public void control() {
-    String in;
+    String in = null;
 
     while(true) {
       // メニュー画面の表示
-      System.out.println("\n トップメニュー::処理を選択してください\n\n[99]終了\n");
+      System.out.println(MsgProperties.prop.getProperty("TOP_OPERATION"));
 
       // 標準入力から番号を取得
-      in = this.commandRead.getInputData();
+      try {
+        in = this.commandRead.getInputData();
+      } catch (CommonException e) {
+        // e.printStackTrace();
+        System.out.println(e.getMessage());
+      }
 
       // 番号によってメニュー分岐
       if (in.equals("99")) { // 『99』: 終了
         return;
       } else {               // その他: 再入力
-        System.out.println("正しい値を入力してください。");
+        System.out.println(MsgProperties.prop.getProperty("ERROR_MSG2"));
       }
 
     }
