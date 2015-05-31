@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 /**
  * 文房具
+ *
  * @author takahiro
  */
 /*
- * Serializableインタフェース
- * …メソッドの定義が1つもないマーカーインタフェース。
+ * Serializableインタフェース …メソッドの定義が1つもないマーカーインタフェース。
  * これを実装することは、シリアライズ(=オブジェクトグラフ構造から直列データ構造への変換)が
  * 出来ることを保証することに等しい。つまり、デシリアライズしたら元通りに動作することを保証する。
  */
@@ -24,10 +24,15 @@ public class Stationery implements Serializable {
 
   /**
    * コンストラクタ : 文房具情報の初期化
-   * @param brandName 商品名
-   * @param quantity 在庫数
-   * @param price 値段
-   * @param location 保管場所
+   *
+   * @param brandName
+   *          商品名
+   * @param quantity
+   *          在庫数
+   * @param price
+   *          値段
+   * @param location
+   *          保管場所
    */
   public Stationery(String brandName, int quantity, int price, String location) {
     this.brandName = brandName;
@@ -65,7 +70,8 @@ public class Stationery implements Serializable {
   }
 
   /**
-   * @param quantity 更新後の在庫数
+   * @param quantity
+   *          更新後の在庫数
    */
   public void setQuantity(int quantity) {
     this.quantity = quantity;

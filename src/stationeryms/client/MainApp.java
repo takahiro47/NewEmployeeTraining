@@ -3,7 +3,8 @@ package stationeryms.client;
 public class MainApp {
 
   /**
-   * @param args コマンドライン引数
+   * @param args
+   *          コマンドライン引数
    */
   public static void main(String[] args) {
     StationeryMSControl stationery = null;

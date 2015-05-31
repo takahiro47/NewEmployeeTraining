@@ -5,7 +5,9 @@ public class CommonException extends Exception {
 
   /**
    * コンストラクタ
-   * @param message エラーメッセージ
+   *
+   * @param message
+   *          エラーメッセージ
    */
   public CommonException(String message) {
     super(message);

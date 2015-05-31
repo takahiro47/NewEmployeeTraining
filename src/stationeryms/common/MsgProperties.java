@@ -12,6 +12,7 @@ public class MsgProperties {
 
   /**
    * コンストラクタ
+   *
    * @throws CommonException
    */
   public MsgProperties() throws CommonException {
@@ -23,6 +24,5 @@ public class MsgProperties {
       throw new CommonException(" メッセージファイルロード失敗");
     }
   }
-
 
 }
