@@ -1,9 +1,11 @@
 package stationeryms.common;
 
+@SuppressWarnings("serial")
 public class CommonException extends Exception {
 
   /**
-   * Constructor:
+   * コンストラクタ
+   * @param message エラーメッセージ
    */
   public CommonException(String message) {
     super(message);

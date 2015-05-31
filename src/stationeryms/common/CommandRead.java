@@ -3,12 +3,12 @@ package stationeryms.common;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Properties;
 
 public class CommandRead {
 
-  /*
-   * 標準入力データを取得し、呼び出し元に返すメソッド
+  /**
+   * @return 標準入力データ
+   * @throws CommonException
    */
   public String getInputData() throws CommonException {
     String message = "";

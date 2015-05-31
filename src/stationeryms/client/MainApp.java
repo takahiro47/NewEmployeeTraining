@@ -1,9 +1,10 @@
 package stationeryms.client;
 
-import stationeryms.common.CommonException;
-
 public class MainApp {
 
+  /**
+   * @param args コマンドライン引数
+   */
   public static void main(String[] args) {
     StationeryMSControl stationery = null;
 

@@ -6,9 +6,9 @@ import stationeryms.common.MsgProperties;
 
 public class StationeryMSControl {
   private CommandRead commandRead; // コマンドライン入力値を管理
-  private MsgProperties msgProperties; // メッセージプロパティ値を格納
+  public MsgProperties msgProperties; // メッセージプロパティ値を格納
 
-  /*
+  /**
    * コンストラクタ
    */
   public StationeryMSControl() throws CommonException {
@@ -16,7 +16,7 @@ public class StationeryMSControl {
     this.msgProperties = new MsgProperties();
   }
 
-  /*
+  /**
    * ユーザが入力した番号のメニューを実行するメソッド
    */
   public void control() {
