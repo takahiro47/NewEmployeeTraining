@@ -1,5 +1,11 @@
 package stationeryms.common;
 
+/**
+ * 独自例外
+ *
+ * @author takahiro
+ *
+ */
 @SuppressWarnings("serial")
 public class CommonException extends Exception {
 

@@ -3,7 +3,7 @@ package stationeryms.entity;
 import java.io.Serializable;
 
 /**
- * 文房具
+ * 文房具オブジェクト
  *
  * @author takahiro
  */
@@ -23,7 +23,7 @@ public class Stationery implements Serializable {
   private String location; // 保管場所
 
   /**
-   * コンストラクタ : 文房具情報の初期化
+   * コンストラクタ : 文房具オブジェクトの初期化
    *
    * @param brandName
    *          商品名

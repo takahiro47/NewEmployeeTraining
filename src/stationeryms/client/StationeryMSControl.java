@@ -1,10 +1,17 @@
 package stationeryms.client;
 
+import stationeryms.action.ReceiptAction;
 import stationeryms.action.ReferenceAction;
 import stationeryms.common.CommandRead;
 import stationeryms.common.CommonException;
 import stationeryms.common.MsgProperties;
 
+/**
+ * 文房具管理アプリケーションの処理フローの分岐
+ *
+ * @author takahiro
+ *
+ */
 public class StationeryMSControl {
   private CommandRead commandRead; // コマンドライン入力値を管理
   public MsgProperties msgProperties; // メッセージプロパティ値を格納
@@ -20,7 +27,7 @@ public class StationeryMSControl {
   }
 
   /**
-   * ユーザが入力した番号のメニューを実行するメソッド
+   * ユーザが入力した番号に対応したアクションクラスをインスタンス化し、その処理を行う。
    */
   public void control() {
     String in = null;
@@ -33,14 +40,19 @@ public class StationeryMSControl {
       try {
         in = this.commandRead.getInputData();
       } catch (CommonException e) {
-        // e.printStackTrace();
         System.out.println(e.getMessage());
       }
 
       // 番号によってメニュー分岐
-      if (in.equals("1")) { // 『1』: 在庫照会
+      if (in.equals("1")) { // 『1』: 在庫照会処理
         try {
           (new ReferenceAction()).exec();
+        } catch (CommonException e) {
+          e.printStackTrace();
+        }
+      } else if (in.equals("2")) { // 『2』: 入荷処理
+        try {
+          (new ReceiptAction()).exec(this.commandRead);
         } catch (CommonException e) {
           e.printStackTrace();
         }

@@ -13,6 +13,12 @@ import java.util.ArrayList;
 import stationeryms.common.CommonException;
 import stationeryms.common.MsgProperties;
 
+/**
+ * 文房具の在庫管理
+ *
+ * @author takahiro
+ *
+ */
 public class StationeryData {
   /*
    * フィールド
@@ -25,11 +31,11 @@ public class StationeryData {
   private static final int FIELD_COUNT = 4; // フィールド数
 
   /* 文房具一覧DB I/O */
-  private FileReader fr;
-  private BufferedReader br;
-  private FileOutputStream fo;
-  private OutputStreamWriter os;
-  private BufferedWriter bw;
+  private FileReader fr = null;
+  private BufferedReader br = null;
+  private FileOutputStream fo = null;
+  private OutputStreamWriter os = null;
+  private BufferedWriter bw = null;
 
   /**
    * 文房具管理リストの初期化
@@ -98,7 +104,9 @@ public class StationeryData {
    */
   public Stationery getStationery(String brandName, String location) throws CommonException {
     for (Stationery stationery : this.stationeryList) {
-      if (stationery.getBrandName().equals(brandName) && stationery.getLocation().equals(location)) { return stationery; }
+      if (stationery.getBrandName().equals(brandName) && stationery.getLocation().equals(location)) {
+        return stationery;
+      }
     }
     throw new CommonException(MsgProperties.prop.getProperty("ERROR_MSG3"));
   }
@@ -146,6 +154,9 @@ public class StationeryData {
 
       // 書き込みストリームの生成
       if (this.fo == null) {
+        this.fo = new FileOutputStream(MY_FILE);
+      }
+      if (this.os == null) {
         this.os = new OutputStreamWriter(this.fo);
       }
       if (this.bw == null) {

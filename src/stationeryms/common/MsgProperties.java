@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * 独自定義プロパティ
+ */
 public class MsgProperties {
   /*
    * フィールド

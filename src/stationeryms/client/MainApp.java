@@ -1,5 +1,11 @@
 package stationeryms.client;
 
+/**
+ * 文房具管理アプリケーション
+ *
+ * @author takahiro
+ *
+ */
 public class MainApp {
 
   /**

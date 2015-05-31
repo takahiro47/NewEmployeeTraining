@@ -3,6 +3,12 @@ package stationeryms.action;
 import stationeryms.common.CommonException;
 import stationeryms.entity.Stationery;
 
+/**
+ * ビジネス処理 在庫照会処理
+ *
+ * @author takahiro
+ *
+ */
 public class ReferenceAction extends BaseAction {
 
   /**

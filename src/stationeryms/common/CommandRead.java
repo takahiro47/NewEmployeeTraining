@@ -4,6 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * 標準入力管理
+ *
+ * @author takahiro
+ *
+ */
 public class CommandRead {
 
   /**
