@@ -10,7 +10,7 @@ import java.io.Serializable;
 /*
  * Serializableインタフェース …メソッドの定義が1つもないマーカーインタフェース。
  * これを実装することは、シリアライズ(=オブジェクトグラフ構造から直列データ構造への変換)が
- * 出来ることを保証することに等しい。つまり、デシリアライズしたら元通りに動作することを保証する。
+ * 出来ることを保証することに等しい。つまり、デシリアライズをすれば元通りに動作することを保証する。
  */
 @SuppressWarnings("serial")
 public class Stationery implements Serializable {

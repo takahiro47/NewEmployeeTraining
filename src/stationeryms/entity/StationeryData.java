@@ -63,6 +63,32 @@ public class StationeryData {
   }
 
   /**
+   * 文房具リストをテキストファイルへ書き出す
+   *
+   * @throws CommonException
+   */
+  public void commitData() throws CommonException {
+    // 書き込みストリームの生成
+    this.openStreamWriter();
+
+    try {
+      // リストに格納された文房具の一覧を、
+      // デリミタで区切られた直列データ構造としてファイルへ書き出す
+      for (Stationery stationery : this.stationeryList) {
+        this.bw.write(stationery.getBrandName() + FIELD_DELIM + stationery.getQuantity() + FIELD_DELIM + stationery.getPrice() + FIELD_DELIM
+            + stationery.getLocation());
+        this.bw.newLine();
+      }
+      this.bw.flush(); // バッファ内容の書き込み
+    } catch (IOException e) {
+      throw new CommonException(MsgProperties.prop.getProperty("ERROR_MSG91"));
+    } finally {
+      // 書き込みストリームのクローズ処理
+      this.closeStreamWriter();
+    }
+  }
+
+  /**
    * @param brandName
    *          検索対象の商品名
    * @param location
