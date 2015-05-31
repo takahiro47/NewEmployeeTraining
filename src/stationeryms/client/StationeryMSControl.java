@@ -10,6 +10,7 @@ public class StationeryMSControl {
 
   /**
    * コンストラクタ
+   * @throws CommonException
    */
   public StationeryMSControl() throws CommonException {
     this.commandRead = new CommandRead();
@@ -35,8 +36,10 @@ public class StationeryMSControl {
       }
 
       // 番号によってメニュー分岐
-      if (in.equals("99")) { // 『99』: 終了
+      if (in.equals("1")) { // 『1』: 在庫照会
         return;
+      } else if (in.equals("99")) { // 『99』: 終了
+          return;
       } else {               // その他: 再入力
         System.out.println(MsgProperties.prop.getProperty("ERROR_MSG2"));
       }

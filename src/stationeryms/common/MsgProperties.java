@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class MsgProperties {
-  /* クラス変数 */
+  /*
+   * フィールド
+   */
   public static final Properties prop = new Properties(); // 独自定義プロパティを保持
 
   /**

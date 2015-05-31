@@ -24,6 +24,10 @@ public class Stationery implements Serializable {
 
   /**
    * コンストラクタ : 文房具情報の初期化
+   * @param brandName 商品名
+   * @param quantity 在庫数
+   * @param price 値段
+   * @param location 保管場所
    */
   public Stationery(String brandName, int quantity, int price, String location) {
     this.brandName = brandName;
