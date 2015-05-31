@@ -2,6 +2,7 @@ package stationeryms.client;
 
 import stationeryms.action.ReceiptAction;
 import stationeryms.action.ReferenceAction;
+import stationeryms.action.ShipmentAction;
 import stationeryms.common.CommandRead;
 import stationeryms.common.CommonException;
 import stationeryms.common.MsgProperties;
@@ -53,6 +54,12 @@ public class StationeryMSControl {
       } else if (in.equals("2")) { // 『2』: 入荷処理
         try {
           (new ReceiptAction()).exec(this.commandRead);
+        } catch (CommonException e) {
+          e.printStackTrace();
+        }
+      } else if (in.equals("3")) { // 『3』: 出荷処理
+        try {
+          (new ShipmentAction()).exec(this.commandRead);
         } catch (CommonException e) {
           e.printStackTrace();
         }
