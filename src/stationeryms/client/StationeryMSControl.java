@@ -1,5 +1,6 @@
 package stationeryms.client;
 
+import stationeryms.action.ReferenceAction;
 import stationeryms.common.CommandRead;
 import stationeryms.common.CommonException;
 import stationeryms.common.MsgProperties;
@@ -10,6 +11,7 @@ public class StationeryMSControl {
 
   /**
    * コンストラクタ
+   *
    * @throws CommonException
    */
   public StationeryMSControl() throws CommonException {
@@ -23,7 +25,7 @@ public class StationeryMSControl {
   public void control() {
     String in = null;
 
-    while(true) {
+    while (true) {
       // メニュー画面の表示
       System.out.println(MsgProperties.prop.getProperty("TOP_OPERATION"));
 
@@ -37,10 +39,14 @@ public class StationeryMSControl {
 
       // 番号によってメニュー分岐
       if (in.equals("1")) { // 『1』: 在庫照会
-        return;
+        try {
+          (new ReferenceAction()).exec();
+        } catch (CommonException e) {
+          e.printStackTrace();
+        }
       } else if (in.equals("99")) { // 『99』: 終了
-          return;
-      } else {               // その他: 再入力
+        return;
+      } else { // その他: 再入力
         System.out.println(MsgProperties.prop.getProperty("ERROR_MSG2"));
       }
 
