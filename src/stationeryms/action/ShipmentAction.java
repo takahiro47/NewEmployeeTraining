@@ -25,9 +25,12 @@ public class ShipmentAction extends BaseAction {
   /**
    * 出荷処理を行う。商品名、保管場所、出荷数をもとに該当する文房具の在庫を更新し、現在の在庫情報をファイル保存する。
    *
-   * @param brandName 商品名
-   * @param location 保管場所
-   * @param inQt 出荷数
+   * @param brandName
+   *          商品名
+   * @param location
+   *          保管場所
+   * @param inQt
+   *          出荷数
    * @throws CommonException
    */
   public void shipment(String brandName, String location, int inQt) throws CommonException {

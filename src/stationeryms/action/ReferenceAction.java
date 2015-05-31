@@ -31,8 +31,7 @@ public class ReferenceAction extends BaseAction {
 
     // データを出力
     for (Stationery stationery : this.getAllStationeryList()) {
-      System.out
-          .printf("%-10s\t%-10s\t%-10s\t%-10s%n", stationery.getBrandName(), stationery.getQuantity(), stationery.getPrice(), stationery.getLocation());
+      System.out.printf("%-10s\t%-10s\t%-10s\t%-10s%n", stationery.getBrandName(), stationery.getQuantity(), stationery.getPrice(), stationery.getLocation());
     }
   }
 
