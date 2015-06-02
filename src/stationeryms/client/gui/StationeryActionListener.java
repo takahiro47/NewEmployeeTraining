@@ -19,6 +19,7 @@ public class StationeryActionListener implements ActionListener {
    * フィールド
    */
   private JFrame invoker; // 呼び出し元フレーム
+  @SuppressWarnings("unused")
   private MsgProperties msgProperties; // プロパティ
 
   /**
@@ -35,15 +36,18 @@ public class StationeryActionListener implements ActionListener {
     }
   }
 
+  /**
+   * イベント処理
+   */
   @Override
-  public void actionPerformed(ActionEvent e) {
+  public void actionPerformed(ActionEvent ae) {
     // 実行されたコマンドを取得
-    String command = e.getActionCommand();
+    String command = ae.getActionCommand();
 
     try {
       // イベントの処理
       if (command.equals("reference")) {
-        // TODO
+        (new ReferenceView("在庫照会")).setVisible(true);
       } else if (command.equals("subMenu")) {
         // TODO
       } else if (command.equals("receipt")) {
@@ -51,10 +55,10 @@ public class StationeryActionListener implements ActionListener {
       } else if (command.equals("shipment")) {
         // TODO
       } else if (command.equals("top")) {
-        // TODO
+        (new TopView("文房具在庫管理システム")).setVisible(true);
       }
-    } catch (Exception e2) {
-      e2.printStackTrace();
+    } catch (Exception e) {
+      e.printStackTrace();
     } finally {
       // 呼び出し元の画面を非表示にする
       this.invoker.setVisible(false);

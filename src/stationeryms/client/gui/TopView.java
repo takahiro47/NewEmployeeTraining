@@ -16,6 +16,12 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class TopView extends OriginalFrame {
 
+  /**
+   * コンストラクタ
+   *
+   * @param title
+   *          フレームタイトル
+   */
   public TopView(String title) {
     // フレームタイトルの設定
     super(title);
