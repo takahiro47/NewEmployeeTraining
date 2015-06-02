@@ -22,7 +22,9 @@ public class MainApp {
     } catch (Exception e) {
       e.printStackTrace();
     }
-    stationery.control(); // リターンが返された場合は、アプリケーションを終了
+
+    // このメソッドが終了した場合は、アプリケーションを終了
+    stationery.control();
 
     System.out.println("アプリケーション終了");
   }

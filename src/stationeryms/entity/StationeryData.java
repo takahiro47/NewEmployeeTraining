@@ -201,6 +201,9 @@ public class StationeryData {
       if (this.bw != null) {
         this.bw.close();
       }
+      if (this.os != null) {
+        this.os.close();
+      }
       if (this.fo != null) {
         this.fo.close();
       }
@@ -208,6 +211,7 @@ public class StationeryData {
       throw new CommonException(MsgProperties.prop.getProperty("ERROE_MSG91"));
     } finally {
       this.bw = null;
+      this.os = null;
       this.fo = null;
     }
   }
